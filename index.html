@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PR Firm</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(
+        rgba(17, 24, 39, 0.9),
+        rgba(17, 24, 39, 0.9)
+      );
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #d1d5db;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    section {
+      padding: 70px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .service {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: #2563eb;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #030712;
+      color: #9ca3af;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>PR Firm</h1>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h2>Build Your Reputation. Grow Your Brand.</h2>
+
+      <p>
+        We help businesses build strong reputations, connect with
+        their audiences, and grow their brand through strategic
+        public relations and effective communication.
+      </p>
+
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+
+    <p>
+      We are a results-driven public relations firm dedicated to
+      helping businesses build strong reputations, increase visibility,
+      and establish meaningful relationships with their audiences.
+      Our strategies are designed to create trust, strengthen brands,
+      and support long-term growth.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+
+    <div class="services">
+
+      <div class="service">
+        <h3>Public Relations</h3>
+        <p>
+          Strategic PR campaigns designed to build awareness
+          and strengthen your brand reputation.
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Media Relations</h3>
+        <p>
+          We help businesses communicate effectively with
+          media outlets and reach the right audiences.
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Social Media Management</h3>
+        <p>
+          Engaging social media strategies that increase
+          visibility and build strong online communities.
+        </p>
+      </div>
+
+      <div class="service">
+        <h3>Reputation Management</h3>
+        <p>
+          Protecting and strengthening your brand's public
+          image through effective communication strategies.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let's Work Together</h2>
+
+    <p>Ready to strengthen your brand and reach more people?</p>
+
+    <p><strong>Phone:</strong> 0111996555</p>
+
+    <a href="tel:0111996555" class="btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>© 2026 PR Firm. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
