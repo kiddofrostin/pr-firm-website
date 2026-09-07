@@ -3,361 +3,572 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PR Solutions | Public Relations</title>
+
+  <title>RedWood Solutions | Public Relations</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
     body {
-      color: #1f2937;
-      background: #f8fafc;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #08244a;
+      background: #ffffff;
       line-height: 1.6;
     }
 
     /* NAVIGATION */
+
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      padding: 18px 8%;
+      width: 100%;
+      padding: 12px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: bold;
-      color: #172554;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .logo span {
-      color: #2563eb;
+    .logo img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .logo-text h2 {
+      font-size: 23px;
+      margin: 0;
+      color: #08244a;
+    }
+
+    .logo-text p {
+      font-size: 13px;
+      font-style: italic;
+      margin: 0;
+      color: #29496d;
     }
 
     nav a {
+      color: #08244a;
       text-decoration: none;
-      color: #374151;
-      margin-left: 25px;
-      font-weight: 600;
+      margin-left: 28px;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #2563eb;
+      color: #3b78b5;
     }
 
     /* HERO */
+
     .hero {
-      min-height: 88vh;
+      min-height: 82vh;
       display: flex;
       align-items: center;
-      padding: 70px 8%;
-      background: linear-gradient(135deg, #172554, #2563eb);
+      padding: 80px 9%;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(5, 30, 62, 0.82),
+          rgba(5, 30, 62, 0.82)
+        ),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1800&q=80");
+
+      background-size: cover;
+      background-position: center;
       color: white;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 700px;
     }
 
     .hero h1 {
       font-size: 58px;
       line-height: 1.1;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .hero h1 span {
-      color: #bfdbfe;
+      color: #cfe6f7;
     }
 
     .hero p {
-      font-size: 20px;
-      color: #e0e7ff;
-      max-width: 680px;
+      font-family: Arial, sans-serif;
+      font-size: 19px;
+      max-width: 650px;
+      color: #e4edf6;
     }
 
-    .button {
+    .hero-button {
       display: inline-block;
       margin-top: 30px;
-      padding: 14px 28px;
-      background: white;
-      color: #1d4ed8;
+      padding: 14px 30px;
+      background: #dceefa;
+      color: #08244a;
       text-decoration: none;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
       font-weight: bold;
-      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .button:hover {
+    .hero-button:hover {
       transform: translateY(-3px);
-      background: #eff6ff;
+      background: white;
     }
 
-    /* GENERAL SECTIONS */
+    /* GENERAL */
+
     section {
-      padding: 80px 8%;
+      padding: 80px 9%;
     }
 
     .section-title {
       text-align: center;
       font-size: 38px;
-      color: #172554;
       margin-bottom: 15px;
     }
 
-    .section-description {
+    .section-subtitle {
       text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-      color: #6b7280;
+      font-family: Arial, sans-serif;
+      color: #64748b;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 45px;
     }
 
     /* ABOUT */
+
     .about {
       background: white;
     }
 
-    .about-content {
-      max-width: 850px;
-      margin: auto;
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-family: Arial, sans-serif;
+      color: #40536b;
+      margin-bottom: 18px;
+    }
+
+    .about-logo {
+      background: #edf5fa;
+      border-radius: 10px;
+      padding: 45px;
       text-align: center;
-      font-size: 18px;
+    }
+
+    .about-logo img {
+      max-width: 280px;
+      width: 100%;
     }
 
     /* SERVICES */
+
+    .services-section {
+      background: #f1f7fc;
+    }
+
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .service-card {
       background: white;
       padding: 35px 25px;
-      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
       transition: 0.3s;
     }
 
     .service-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-7px);
     }
 
     .service-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 18px;
+      background: #08244a;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
     }
 
     .service-card h3 {
-      color: #1d4ed8;
       margin-bottom: 12px;
-      font-size: 21px;
+      font-size: 20px;
     }
 
     .service-card p {
-      color: #6b7280;
+      font-family: Arial, sans-serif;
+      color: #64748b;
+      font-size: 14px;
     }
 
     /* WHY US */
-    .why-us {
-      background: #eff6ff;
-    }
 
-    .why-grid {
+    .why {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      padding: 0;
     }
 
-    .why-card {
-      text-align: center;
-      padding: 25px;
+    .why-title {
+      background:
+        linear-gradient(rgba(5,30,62,0.85), rgba(5,30,62,0.85)),
+        url("https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1000&q=80");
+
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 12%;
     }
 
-    .why-card h3 {
-      margin: 12px 0;
-      color: #172554;
+    .why-title h2 {
+      font-size: 40px;
+      margin-top: 10px;
+    }
+
+    .why-list {
+      padding: 70px 12%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .why-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .why-item p {
+      font-family: Arial, sans-serif;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .check {
+      color: #27679e;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
     }
 
     /* CONTACT */
+
     .contact {
-      background: #172554;
+      background: #08244a;
       color: white;
-      text-align: center;
+      padding: 65px 9%;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
     }
 
     .contact h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
+      font-size: 38px;
     }
 
     .contact p {
-      color: #dbeafe;
-      font-size: 18px;
-      margin: 8px 0;
+      font-family: Arial, sans-serif;
+      color: #d7e6f2;
+      margin-top: 8px;
     }
 
-    .contact .button {
-      margin-top: 25px;
+    .contact-info {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .call-button {
+      padding: 14px 28px;
+      border-radius: 25px;
+      background: #dceefa;
+      color: #08244a;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
     /* FOOTER */
+
     footer {
-      background: #0f172a;
-      color: #94a3b8;
+      background: #061a34;
+      color: #b5c7d8;
       text-align: center;
-      padding: 25px;
+      padding: 22px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
     }
 
     /* MOBILE */
-    @media (max-width: 700px) {
+
+    @media (max-width: 900px) {
+
       header {
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
       }
 
       nav a {
-        margin: 0 7px;
+        margin: 0 8px;
         font-size: 14px;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 43px;
       }
 
-      .hero p {
-        font-size: 17px;
+      .about-container {
+        grid-template-columns: 1fr;
       }
 
-      .section-title {
-        font-size: 30px;
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 20px;
       }
     }
+
+    @media (max-width: 600px) {
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .why-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 7%;
+      }
+
+      .hero h1 {
+        font-size: 37px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
   <!-- NAVIGATION -->
+
   <header>
-    <div class="logo">PR <span>Solutions</span></div>
+
+    <div class="logo">
+
+      <img src="logo.png" alt="RedWood Solutions Logo">
+
+      <div class="logo-text">
+        <h2>RedWood Solutions</h2>
+        <p>We aim to prosper you</p>
+      </div>
+
+    </div>
 
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
       <a href="#contact">Contact</a>
     </nav>
+
   </header>
 
 
   <!-- HERO -->
+
   <section class="hero" id="home">
+
     <div class="hero-content">
 
       <h1>
-        Building Brands.<br>
-        <span>Managing Reputations.</span>
+        RedWood Solutions<br>
+        <span>Strategic Communication.<br>
+        Lasting Impact.</span>
       </h1>
 
       <p>
-        We help businesses communicate with confidence,
-        build strong public relationships, and create
-        powerful brand reputations.
+        We help businesses build strong reputations,
+        connect with their audiences, and grow their
+        brands through strategic public relations and
+        effective communication.
       </p>
 
-      <a href="#contact" class="button">Work With Us</a>
+      <a href="#contact" class="hero-button">
+        Get in Touch →
+      </a>
 
     </div>
+
   </section>
 
 
   <!-- ABOUT -->
+
   <section class="about" id="about">
 
-    <h2 class="section-title">About PR Solutions</h2>
+    <div class="about-container">
 
-    <p class="section-description">
-      Strategic communication that puts your brand in the spotlight.
-    </p>
+      <div class="about-text">
 
-    <div class="about-content">
-      <p>
-        PR Solutions is a results-driven public relations firm
-        focused on helping businesses build credibility, increase
-        visibility, and develop meaningful relationships with their
-        audiences.
-      </p>
+        <p><strong>ABOUT US</strong></p>
 
-      <br>
+        <h2>Who We Are</h2>
 
-      <p>
-        From media relations and publicity to reputation management
-        and crisis communication, we create communication strategies
-        designed to help brands grow and succeed.
-      </p>
+        <p>
+          RedWood Solutions is a results-driven public
+          relations firm dedicated to helping businesses
+          build credibility, increase visibility, and
+          develop meaningful relationships with their
+          audiences.
+        </p>
+
+        <p>
+          From media relations and publicity to reputation
+          management and crisis communication, we create
+          communication strategies designed to help your
+          brand grow and succeed.
+        </p>
+
+      </div>
+
+      <div class="about-logo">
+
+        <img src="logo.png" alt="RedWood Solutions">
+
+      </div>
+
     </div>
 
   </section>
 
 
   <!-- SERVICES -->
-  <section id="services">
 
-    <h2 class="section-title">Our Services</h2>
+  <section class="services-section" id="services">
 
-    <p class="section-description">
-      Professional communication solutions designed around your brand.
+    <h2 class="section-title">What We Offer</h2>
+
+    <p class="section-subtitle">
+      Professional public relations and communication
+      solutions designed around your brand.
     </p>
 
     <div class="services">
 
       <div class="service-card">
+
         <div class="service-icon">📣</div>
+
         <h3>Public Relations</h3>
+
         <p>
           Strategic PR campaigns that increase awareness
           and strengthen your public image.
         </p>
+
       </div>
 
+
       <div class="service-card">
-        <div class="service-icon">📰</div>
+
+        <div class="service-icon">▤</div>
+
         <h3>Media Relations</h3>
+
         <p>
           Connecting your brand with the right media
           opportunities and audiences.
         </p>
+
       </div>
 
+
       <div class="service-card">
-        <div class="service-icon">⭐</div>
+
+        <div class="service-icon">✓</div>
+
         <h3>Brand Reputation</h3>
+
         <p>
           Building trust and maintaining a positive
           reputation for your business.
         </p>
+
       </div>
 
+
       <div class="service-card">
-        <div class="service-icon">🛡️</div>
+
+        <div class="service-icon">!</div>
+
         <h3>Crisis Communication</h3>
+
         <p>
           Helping organizations respond professionally
           and effectively during challenging situations.
         </p>
+
       </div>
 
     </div>
@@ -365,43 +576,74 @@
   </section>
 
 
-  <!-- WHY US -->
-  <section class="why-us">
+  <!-- WHY CHOOSE US -->
 
-    <h2 class="section-title">Why Choose Us?</h2>
+  <section class="why" id="why">
 
-    <div class="why-grid">
+    <div class="why-title">
 
-      <div class="why-card">
-        <h3>Strategic</h3>
+      <p>WHY CHOOSE US</p>
+
+      <h2>The RedWood Advantage</h2>
+
+    </div>
+
+
+    <div class="why-list">
+
+      <div class="why-item">
+
+        <h3>
+          <span class="check">✓</span> Strategic
+        </h3>
+
         <p>
-          We develop communication strategies based
-          on your business goals.
+          We develop communication strategies
+          based on your goals.
         </p>
+
       </div>
 
-      <div class="why-card">
-        <h3>Creative</h3>
+
+      <div class="why-item">
+
+        <h3>
+          <span class="check">✓</span> Creative
+        </h3>
+
         <p>
-          We create ideas and campaigns that make
-          your brand stand out.
+          We create ideas and campaigns that
+          make your brand stand out.
         </p>
+
       </div>
 
-      <div class="why-card">
-        <h3>Professional</h3>
+
+      <div class="why-item">
+
+        <h3>
+          <span class="check">✓</span> Professional
+        </h3>
+
         <p>
-          We represent your brand with professionalism,
+          We represent your brand with integrity,
           clarity and consistency.
         </p>
+
       </div>
 
-      <div class="why-card">
-        <h3>Results-Focused</h3>
+
+      <div class="why-item">
+
+        <h3>
+          <span class="check">✓</span> Results-Focused
+        </h3>
+
         <p>
-          Our goal is to create communication that
-          delivers meaningful results.
+          Our goal is to create communication
+          that delivers meaningful results.
         </p>
+
       </div>
 
     </div>
@@ -410,34 +652,53 @@
 
 
   <!-- CONTACT -->
+
   <section class="contact" id="contact">
 
-    <h2>Let's Build Your Brand</h2>
+    <div class="contact-container">
 
-    <p>
-      Ready to strengthen your reputation and reach
-      your audience?
-    </p>
+      <div>
 
-    <p><strong>Contact:</strong> Mercy Kawira</p>
+        <p>LET'S WORK TOGETHER</p>
 
-    <p><strong>Phone:</strong> 0111996555</p>
+        <h2>Get In Touch</h2>
 
-    <a href="tel:0111996555" class="button">
-      Call Us
-    </a>
+      </div>
+
+
+      <div class="contact-info">
+
+        <div>
+          <strong>Contact Person</strong><br>
+          Mercy Kawira
+        </div>
+
+        <div>
+          <strong>Phone</strong><br>
+          0111996555
+        </div>
+
+        <a
+          href="tel:0111996555"
+          class="call-button">
+          ☎ Call Us
+        </a>
+
+      </div>
+
+    </div>
 
   </section>
 
 
   <!-- FOOTER -->
+
   <footer>
 
-    <p>
-      © 2026 PR Solutions. All Rights Reserved.
-    </p>
+    © 2026 RedWood Solutions. All Rights Reserved.
 
   </footer>
+
 
 </body>
 </html>
